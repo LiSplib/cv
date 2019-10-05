@@ -1,0 +1,109 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    --vert: rgb(95, 230, 167);
+    --bsize: 2.5em;
+    --msize: 2em;
+    --ssize: 1.5em;
+    line-height: 1.8em;
+    grid-template-columns: repeat(3, calc(33.3vw));
+    grid-template-rows: repeat(auto, calc(20vh));
+    grid-template-areas:"header block1 block1" "header block2 block2" "pskills block2 block2" "sskills block2 block2" "sskills block2 block2" "contact hskills hskills" "contact hskills hskills" "footer footer footer";
+}
+
+h1{
+    color: var(--vert);
+    font-size: var(--bsize);
+}
+
+h3{
+    color: var(--vert);
+    text-transform: uppercase;
+    font-size: var(--msize);
+}
+
+header{
+    grid-area: header;
+    text-align: center;
+    background: black;
+}
+
+header img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+h4{
+    color: var(--vert);
+    text-transform: uppercase;
+    font-size: var(--ssize);
+}
+
+.block1{
+    text-align: center;
+    grid-area: block1;
+}
+
+.block2{
+    display: flex;
+    flex-direction: column;
+    align-items: justify;
+    grid-area: block2;
+    flex-grow: 1;
+    margin-left: 5%;
+}
+
+.pskills{
+    grid-area: pskills;
+    background: black;
+    color: white;
+}
+
+.hskills{
+    grid-area: hskills;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+    grid-area: footer;
+    display: flex;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    grid-area: contact;
+    background: black;
+    color: white;
+}
+
+.sskills{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    grid-area: sskills;
+    background: black;
+    color: white;
+}
+
+.gras{
+    font-weight: bold;
+}
+
+ul li{
+    list-style: none;
+}
+
+.box{
+    margin-left: 5%;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(177, 245, 213)
+}
