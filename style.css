@@ -3,14 +3,18 @@ body{
     padding: 0;
     display: grid;
     --vert: rgb(95, 230, 167);
+    --fond: rgb(29, 29, 29);
+    --fhover: rgb(49, 49, 49);
+    --bhover: rgb(226, 225, 225);
+    --font: rgb(255, 255, 255);
     --bsize: 2.5vw;
     --msize: 2vw;
     --ssize: 1.8vw;
     font-size: 1.5vw;
     line-height: 1.8vw;
-    grid-template-columns: repeat(3, calc(33.3vw));
-    grid-template-rows: repeat(auto, calc(20vh));
-    grid-template-areas:"header block1 block1" "header block2 block2" "pskills block2 block2" "sskills block2 block2" "sskills block2 block2" "contact hskills hskills" "contact hskills hskills" "footer footer footer";
+    grid-template-columns: repeat(3, 33.3vw);
+    grid-template-rows: repeat(3, 33.3vh);
+    grid-template-areas:"header block1 block1" "header block2 block2" "pskills block2 block2" "sskills block2 block2" "sskills block2 block2" "contact hskills hskills" "contact hskills hskills";
 }
 
 h1{
@@ -23,24 +27,41 @@ h3{
     color: var(--vert);
     text-transform: uppercase;
     font-size: var(--msize);
+    margin-left: 5%;
 }
 
 header{
     grid-area: header;
     text-align: center;
-    background: black;
+    background: var(--fond);
 }
 
-header img{
-    width: 100px;
-    height: 100px;
+/* header img{
+    width: calc((65% / 2) - ( 1em - 1em / 2));
+    height: calc((65% / 2) - ( 1em - 1em / 2));
     border-radius: 50%;
+} */
+
+header a{
+    display: flex;
+    width: calc((65% / 2) - ( 1em - 1em / 2));
+    height: calc((65% / 2) - ( 1em - 1em / 2));
+    margin: auto;
+    border-radius: 50%;
+    background: url('moi.png') center no-repeat;
+    background-size: calc(110% - ( 1em - 1em / 2)); 
+}
+
+header a:hover{
+    background: url('cvmax.jpg') center no-repeat;
+    background-size: calc(110% - ( 1em - 1em / 2)); 
 }
 
 h4{
     color: var(--vert);
     text-transform: uppercase;
     font-size: var(--ssize);
+    margin-left: 5%;
 }
 
 .block1{
@@ -51,46 +72,60 @@ h4{
 .block2{
     display: flex;
     flex-direction: column;
-    align-items: justify;
     grid-area: block2;
     flex-grow: 1;
-    margin-left: 5%;
+    justify-content: space-around;
 }
 
 .pskills{
     grid-area: pskills;
-    background: black;
-    color: white;
+    background: var(--fond);
+    color: var(--font);
+    display: flex;
+    transition: all 1s;
+}
+
+.pskills .logo_box{
+    display: flex;
+    align-content: center;
+    flex-grow: 1;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.pskills .logo_box .logo:hover{
+    transform: scale(1.1);
 }
 
 .hskills{
     grid-area: hskills;
-    margin-left: 5%;
     display: flex;
     flex-direction: column;
-}
-
-footer{
-    grid-area: footer;
-    display: flex;
 }
 
 .contact{
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    justify-content: center;
     grid-area: contact;
-    background: black;
-    color: white;
+    background: var(--fond);
+    color: var(--font);
 }
 
 .sskills{
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     grid-area: sskills;
-    background: black;
-    color: white;
+    background: var(--fond);
+    color: var(--font);
+}
+
+header:hover, .pskills:hover, .sskills:hover, .contact:hover{
+    background: var(--fhover);
+}
+
+.block1:hover, .formation:hover, .Xp:hover, .Comp:hover, .cbox:hover, .cbox1:hover{
+    background: var(--bhover);
 }
 
 .gras{
@@ -99,6 +134,7 @@ footer{
 
 ul li{
     list-style: none;
+    margin-left: 5%;
 }
 
 .box{
@@ -107,11 +143,53 @@ ul li{
 
 a{
     text-decoration: none;
-    color: rgb(177, 245, 213)
+    color: rgb(255, 135, 36);
 }
 
 .logo{
-    width: 80px;
-    height: 80px;
-
+    width: calc((85% / 5) - (1em - 1em / 5));
+    height: calc(35% - (1em - 1em / 5));
 }
+
+@media all and (max-width: 1024px){
+    
+    body{
+        grid-template-areas:"header block1 block1" "pskills block2 block2" "sskills block2 block2" "sskills block2 block2" "contact hskills hskills" "contact hskills hskills" "contact hskills hskills";
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    h1{
+        font-size: 2em;
+        line-height: 1.5em;
+    }
+
+    h3{
+        font-size: 1.6em;
+        line-height: 1.1em;
+    }
+
+    h4{
+        font-size: 1.4em;
+        line-height: 0.9em;
+    }
+
+    header img{
+        width: 80px;
+        height: 80px;
+    }
+
+    .block2{
+        justify-content: start;
+    }
+
+    .logo{
+        flex-direction: column;
+        width: 45px;
+        height: 45px;
+    }
+
+    .pskills .logo_box{
+        justify-content: flex-start;
+        flex-direction: column;
+    }
