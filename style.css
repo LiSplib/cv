@@ -152,8 +152,14 @@ header:hover, .pskills:hover, .sskills:hover, .contact:hover{
     background: var(--bhover);
 }
 
-.cbox1:hover{
-    background: url('hobbies.jpg') no-repeat bottom right, rgba(163, 250, 250, 0.5);
+.cbox1 img{
+    /* transition: 1s ease-in-out; */
+    width: 40px;
+    height: 40px;
+}
+
+.cbox1:hover img{
+    animation: glisse 5s infinite alternate;
 }
 
 .gras{
@@ -162,7 +168,6 @@ header:hover, .pskills:hover, .sskills:hover, .contact:hover{
 
 ul li{
     list-style: none;
-    /* margin-left: 5%; */
 }
 
 .box{
@@ -179,10 +184,25 @@ a{
     height: calc(35% - (1em - 1em / 2));
 }
 
+@keyframes glisse{
+    0% {
+        transform: translate(0);
+    }
+    12.5% {
+        transform: translate(12.5vw);
+    }
+    87.5% {
+        transform: translate(65.5vw);
+    }
+    100% {
+        transform: translate(85vw);
+    }
+}
+
 @media all and (max-width: 1024px){
     
     body{
-        grid-template-areas:"header block1 block1" "header block2 block2" "sskills block2 block2" "sskills block2 block2" "contact hskills hskills" "contact hskills hskills" "contact hskills hskills";
+        grid-template-areas:"header block1 block1" "header block2 block2" "pskills block2 block2" "sskills block2 block2" "contact hskills hskills" "contact hskills hskills" "contact hskills hskills";
         font-size: calc(1vw + 1vh + 0.5vmin);
         line-height: calc(1vw + 1vh + 0.5vmin);
     }
@@ -212,14 +232,12 @@ a{
     }
 
     .logo{
-        flex-direction: column;
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
     }
 
     .pskills .logo_box{
         justify-content: flex-start;
-        flex-direction: column;
     }
 
     ul{
