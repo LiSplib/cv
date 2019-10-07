@@ -1,2 +1,2 @@
 # cv
-[cv el ligne](https://lisplib.github.io/cv/)
+[cv en ligne](https://lisplib.github.io/cv/)
