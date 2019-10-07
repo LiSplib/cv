@@ -1,0 +1,31 @@
+@page{
+    size: A4;
+    orientation: portrait;
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    padding: 0;
+    grid-template-rows: repeat(3, 33.3vh);
+    grid-template-areas:"header block1 block1" "sskills block2 block2" "contact sskills hskills" ;
+}
+
+.logo{
+    display: none;
+}
+
+header{
+    display: flex;
+    justify-content: start;
+    height: 33vh;
+}
+
+.block2{
+    margin: 0;
+    padding: 0;
+    flex-shrink: 1;
+    height: 33vh;
+}
+
+.sskills, .hskills, .contact{
+    height: 33vh;
+}

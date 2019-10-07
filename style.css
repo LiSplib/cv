@@ -10,8 +10,8 @@ body{
     --bsize: 2.5vw;
     --msize: 2vw;
     --ssize: 1.8vw;
-    font-size: 1.5vw;
-    line-height: 1.8vw;
+    font-size: calc(1vw + 1vh + 0.5vmin);
+    line-height: calc(1vw + 1vh + 0.5vmin);
     grid-template-columns: repeat(3, 33.3vw);
     grid-template-rows: repeat(3, 33.3vh);
     grid-template-areas:"header block1 block1" "header block2 block2" "pskills block2 block2" "sskills block2 block2" "sskills block2 block2" "contact hskills hskills" "contact hskills hskills";
@@ -27,20 +27,39 @@ h3{
     color: var(--vert);
     text-transform: uppercase;
     font-size: var(--msize);
-    margin-left: 5%;
+    margin-left: 3%;
 }
 
 header{
     grid-area: header;
+    display: flex;
+    flex-direction: column;
     text-align: center;
     background: var(--fond);
 }
 
-/* header img{
-    width: calc((65% / 2) - ( 1em - 1em / 2));
-    height: calc((65% / 2) - ( 1em - 1em / 2));
+.comment{
+    font-size: 10px;
+    color: transparent;
+    line-height: 10px;
+}
+
+.dwl:focus, .dwl:hover ~ .comment{
+    color: orange;
+}
+
+.dwl{
+    background: url('pdf.jpg');
+    width: 50px!important;
+    height: 50px;
+    border-radius: 0;
+    transition: all 1s;
+}
+
+.dwl:hover{
     border-radius: 50%;
-} */
+    transform: scale(1.2);
+}
 
 header a{
     display: flex;
@@ -49,10 +68,15 @@ header a{
     margin: auto;
     border-radius: 50%;
     background: url('moi.png') center no-repeat;
-    background-size: calc(110% - ( 1em - 1em / 2)); 
+    background-size: calc(110% - ( 1em - 1em / 2));
 }
 
-header a:hover{
+header + a{
+    min-width: 100px;
+    min-height: 100px; 
+}
+
+header .photo:hover{
     background: url('cvmax.jpg') center no-repeat;
     background-size: calc(110% - ( 1em - 1em / 2)); 
 }
@@ -61,7 +85,7 @@ h4{
     color: var(--vert);
     text-transform: uppercase;
     font-size: var(--ssize);
-    margin-left: 5%;
+    margin-left: 3%;
 }
 
 .block1{
@@ -128,13 +152,17 @@ header:hover, .pskills:hover, .sskills:hover, .contact:hover{
     background: var(--bhover);
 }
 
+.cbox1:hover{
+    background: url('hobbies.jpg') no-repeat bottom right, rgba(163, 250, 250, 0.5);
+}
+
 .gras{
     font-weight: bold;
 }
 
 ul li{
     list-style: none;
-    margin-left: 5%;
+    /* margin-left: 5%; */
 }
 
 .box{
@@ -148,15 +176,15 @@ a{
 
 .logo{
     width: calc((85% / 5) - (1em - 1em / 5));
-    height: calc(35% - (1em - 1em / 5));
+    height: calc(35% - (1em - 1em / 2));
 }
 
 @media all and (max-width: 1024px){
     
     body{
         grid-template-areas:"header block1 block1" "pskills block2 block2" "sskills block2 block2" "sskills block2 block2" "contact hskills hskills" "contact hskills hskills" "contact hskills hskills";
-        font-size: 12px;
-        line-height: 12px;
+        font-size: calc(1vw + 1vh + 0.5vmin);
+        line-height: calc(1vw + 1vh + 0.5vmin);
     }
 
     h1{
@@ -174,7 +202,7 @@ a{
         line-height: 0.9em;
     }
 
-    header img{
+    header a{
         width: 80px;
         height: 80px;
     }
