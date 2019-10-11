@@ -66,9 +66,13 @@ header a{
     width: calc((65% / 2) - ( 1em - 1em / 2));
     height: calc((65% / 2) - ( 1em - 1em / 2));
     margin: auto;
-    border-radius: 50%;
+    border-radius: 8px;
     background: url('moi.png') center no-repeat;
     background-size: calc(110% - ( 1em - 1em / 2));
+}
+
+.photo{
+    border-radius: 8px;
 }
 
 header + a{
@@ -188,15 +192,11 @@ a{
     0% {
         transform: translate(0);
     }
-    12.5% {
-        transform: translate(12.5vw);
-    }
-    87.5% {
-        transform: translate(65.5vw);
-    }
+    
     100% {
-        transform: translate(85vw);
+        transform: translate(65vw);
     }
+    
 }
 
 @media all and (max-width: 1024px){
@@ -225,6 +225,10 @@ a{
     header a{
         width: 80px;
         height: 80px;
+    }
+
+    .photo{
+        border-radius: 8px;
     }
 
     .block2{
