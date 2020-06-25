@@ -1,47 +1,32 @@
 body{
-    margin: 0;
-    padding: 0;
-    display: grid;
-    --vert: rgb(95, 230, 167);
-    --fond: rgb(29, 29, 29);
-    --fhover: rgb(49, 49, 49);
-    --bhover: rgb(226, 225, 225);
-    --font: rgb(255, 255, 255);
-    --bsize: 2.5vw;
-    --msize: 2vw;
-    --ssize: 1.8vw;
-    font-size: calc(1vw + 1vh + 0.5vmin);
-    line-height: calc(1vw + 1vh + 0.5vmin);
-    grid-template-columns: repeat(3, 33.3vw);
-    grid-template-rows: repeat(3, 33.3vh);
-    grid-template-areas:"header block1 block1" "header block2 block2" "pskills block2 block2" "sskills block2 block2" "sskills block2 block2" "contact hskills hskills" "contact hskills hskills";
+    background-color: #333;
+    color: white;
+    font-family: 'Barlow', sans-serif;
 }
 
-h1{
-    color: var(--vert);
-    font-size: var(--bsize);
-    line-height: var(--bsize);
+a{
+    color: #df4650;
 }
 
-h3{
-    color: var(--vert);
-    text-transform: uppercase;
-    font-size: var(--msize);
-    margin-left: 3%;
+a:hover{
+    text-decoration: none;
+    color: #fa303d;
 }
 
-header{
-    grid-area: header;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    background: var(--fond);
+h1, h3, h4{
+    color: #acacac;
 }
 
-.comment{
-    font-size: 10px;
-    color: transparent;
-    line-height: 10px;
+.col-4, .col-7, .col-8, .col-12, .col-6{
+    box-shadow: 5px 5px 60px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
 }
 
 .dwl:focus, .dwl:hover ~ .comment{
@@ -61,103 +46,8 @@ header{
     transform: scale(1.2);
 }
 
-header a{
-    display: flex;
-    width: calc((65% / 2) - ( 1em - 1em / 2));
-    height: calc((65% / 2) - ( 1em - 1em / 2));
-    margin: auto;
-    border-radius: 8px;
-    background: url('moi.png') center no-repeat;
-    background-size: calc(110% - ( 1em - 1em / 2));
-}
-
-.photo{
-    border-radius: 8px;
-}
-
-header + a{
-    min-width: 100px;
-    min-height: 100px; 
-}
-
-header .photo:hover{
-    background: url('cvmax.jpg') center no-repeat;
-    background-size: calc(110% - ( 1em - 1em / 2)); 
-}
-
-h4{
-    color: var(--vert);
-    text-transform: uppercase;
-    font-size: var(--ssize);
-    margin-left: 3%;
-}
-
-.block1{
-    text-align: center;
-    grid-area: block1;
-}
-
-.block2{
-    display: flex;
-    flex-direction: column;
-    grid-area: block2;
-    flex-grow: 1;
-    justify-content: space-around;
-}
-
-.pskills{
-    grid-area: pskills;
-    background: var(--fond);
-    color: var(--font);
-    display: flex;
-    transition: all 1s;
-}
-
-.pskills .logo_box{
-    display: flex;
-    align-content: center;
-    flex-grow: 1;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.pskills .logo_box .logo:hover{
-    transform: scale(1.1);
-}
-
-.hskills{
-    grid-area: hskills;
-    display: flex;
-    flex-direction: column;
-}
-
-.contact{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    grid-area: contact;
-    background: var(--fond);
-    color: var(--font);
-}
-
-.sskills{
-    display: flex;
-    flex-direction: column;
-    grid-area: sskills;
-    background: var(--fond);
-    color: var(--font);
-}
-
-header:hover, .pskills:hover, .sskills:hover, .contact:hover{
-    background: var(--fhover);
-}
-
-.block1:hover, .formation:hover, .Xp:hover, .Comp:hover, .cbox:hover, .cbox1:hover{
-    background: var(--bhover);
-}
-
 .cbox1 img{
-    /* transition: 1s ease-in-out; */
+    transition: all 1s ease-in-out;
     width: 40px;
     height: 40px;
 }
@@ -166,85 +56,14 @@ header:hover, .pskills:hover, .sskills:hover, .contact:hover{
     animation: glisse 5s infinite alternate;
 }
 
-.gras{
-    font-weight: bold;
-}
-
-ul li{
-    list-style: none;
-}
-
-.box{
-    margin-left: 5%;
-}
-
-a{
-    text-decoration: none;
-    color: rgb(255, 135, 36);
-}
-
-.logo{
-    width: calc((85% / 5) - (1em - 1em / 5));
-    height: calc(35% - (1em - 1em / 2));
-}
-
 @keyframes glisse{
     0% {
         transform: translate(0);
     }
     
     100% {
-        transform: translate(65vw);
+        transform: translate(15vw);
+        scale: 2;
     }
     
-}
-
-@media all and (max-width: 1024px){
-    
-    body{
-        grid-template-areas:"header block1 block1" "header block2 block2" "pskills block2 block2" "sskills block2 block2" "contact hskills hskills" "contact hskills hskills" "contact hskills hskills";
-        font-size: calc(1vw + 1vh + 0.5vmin);
-        line-height: calc(1vw + 1vh + 0.5vmin);
-    }
-
-    h1{
-        font-size: 2em;
-        line-height: 1.5em;
-    }
-
-    h3{
-        font-size: 1.6em;
-        line-height: 1.1em;
-    }
-
-    h4{
-        font-size: 1.4em;
-        line-height: 0.9em;
-    }
-
-    header a{
-        width: 80px;
-        height: 80px;
-    }
-
-    .photo{
-        border-radius: 8px;
-    }
-
-    .block2{
-        justify-content: start;
-    }
-
-    .logo{
-        width: 40px;
-        height: 40px;
-    }
-
-    .pskills .logo_box{
-        justify-content: flex-start;
-    }
-
-    ul{
-        padding: 0 1%;
-    }
 }
